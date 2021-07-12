@@ -16,19 +16,19 @@
         - 6881:6881
         - 6881:6881/udp
         - 8080:8080
+      restart: unless-stopped
 
-    restart: unless-stopped
-      radarr:
-        image: ghcr.io/linuxserver/radarr
-        container_name: radarr
-        environment:
-          - PUID=1000
-          - PGID=1000
-          - TZ=Europe/London
-        volumes:
-          - ./config/radarr:/config
-          - ../movies:/movies #optional
-          - ../downloads:/downloads
-        ports:
-          - 7878:7878
-        restart: unless-stopped
+    radarr:
+      image: ghcr.io/linuxserver/radarr
+      container_name: radarr
+      environment:
+        - PUID=1000
+        - PGID=1000
+        - TZ=Europe/London
+      volumes:
+        - ./config/radarr:/config
+        - ../movies:/movies #optional
+        - ../downloads:/downloads
+      ports:
+        - 7878:7878
+      restart: unless-stopped
