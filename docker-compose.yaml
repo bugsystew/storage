@@ -17,9 +17,6 @@
         - 6881:6881/udp
         - 8080:8080
       restart: unless-stopped
-      labels:
-        - "traefik.enable=true"
-        - "traefik.http.routers.qbittorrent.rule=PathPrefix(`/qbittorrent`)"
 
     radarr:
       image: ghcr.io/linuxserver/radarr
@@ -35,9 +32,6 @@
       ports:
         - 7878:7878
       restart: unless-stopped
-      labels:
-        - "traefik.enable=true"
-        - "traefik.http.routers.radarr.rule=PathPrefix(`/radarr`)"
 
     sonarr:
       image: ghcr.io/linuxserver/sonarr
@@ -53,19 +47,3 @@
       ports:
         - 8989:8989
       restart: unless-stopped
-      labels:
-        - "traefik.enable=true"
-        - "traefik.http.routers.sonarr.rule=PathPrefix(`/sonarr`)"
-
-    traefik:
-      image: "traefik:v2.4"
-      container_name: "traefik"
-      command:
-        - "--api.insecure=true"
-        - "--providers.docker=true"
-        - "--providers.docker.exposedbydefault=false"
-      ports:
-        - "80:80"
-        - "8080:8080"
-      volumes:
-        - "/var/run/docker.sock:/var/run/docker.sock:ro"
