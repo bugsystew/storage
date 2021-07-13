@@ -53,6 +53,10 @@
       ports:
         - 8989:8989
       restart: unless-stopped
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.sonarr.rule=PathPrefix(`/sonarr`)"
+
     jackett:
       image: ghcr.io/linuxserver/jackett
       container_name: jackett
@@ -69,7 +73,7 @@
       restart: unless-stopped
       labels:
         - "traefik.enable=true"
-        - "traefik.http.routers.sonarr.rule=PathPrefix(`/sonarr`)"
+        - "traefik.http.routers.jackett.rule=PathPrefix(`/jackett`)"
 
     bazarr:
       image: ghcr.io/linuxserver/bazarr
