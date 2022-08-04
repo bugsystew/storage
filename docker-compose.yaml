@@ -2,7 +2,7 @@
   version: "2.1"
   services:
     qbittorrent:
-      image: ghcr.io/linuxserver/qbittorrent
+      image: linuxserver/qbittorrent
       container_name: qbittorrent
       environment:
         - PUID=1000
@@ -22,7 +22,7 @@
         - "traefik.http.routers.qbittorrent.rule=PathPrefix(`/qbittorrent`)"
 
     radarr:
-      image: ghcr.io/linuxserver/radarr
+      image: linuxserver/radarr
       container_name: radarr
       environment:
         - PUID=1000
@@ -40,7 +40,7 @@
         - "traefik.http.routers.radarr.rule=PathPrefix(`/radarr`)"
 
     sonarr:
-      image: ghcr.io/linuxserver/sonarr
+      image: linuxserver/sonarr
       container_name: sonarr
       environment:
         - PUID=1000
@@ -58,7 +58,7 @@
         - "traefik.http.routers.sonarr.rule=PathPrefix(`/sonarr`)"
 
     jackett:
-      image: ghcr.io/linuxserver/jackett
+      image: linuxserver/jackett
       container_name: jackett
       environment:
         - PUID=1000
@@ -76,7 +76,7 @@
         - "traefik.http.routers.jackett.rule=PathPrefix(`/jackett`)"
 
     bazarr:
-      image: ghcr.io/linuxserver/bazarr
+      image: linuxserver/bazarr
       container_name: bazarr
       environment:
         - PUID=1000
