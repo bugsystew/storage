@@ -1,1 +1,1 @@
-Test
+The concept of storing data in the cloud has been around for decades; however, people only started adopting it in recent years. The idea behind storing data in the cloud is that it allows users to access it from any device without paying extra charges. This is a convenient way to store data and make sure everyone has access to it. Plus, it frees up space on individual devices.
